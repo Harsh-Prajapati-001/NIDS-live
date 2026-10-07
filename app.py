@@ -44,7 +44,7 @@ with tab1:
             labels, conf = inference.predict(X_numpy, bundle, model, device, conf_threshold)
             
             df["Predicted_Threat"] = labels
-            df["Confidence"] = (conf * 100).round(2).astype(str) + "%"
+            df["Confidence"] = [f"{x:.2f}%" for x in (conf * 100)]
             
             # 1. Create a Risk Sorting mechanism
             # Convert Confidence string back to float for sorting
