@@ -70,7 +70,7 @@ with tab1:
             # Highlight malicious rows in the dataframe
             def highlight_threats(row):
                 if row["Predicted_Threat"] not in ["Benign", "Uncertain / Unrecognized"]:
-                    return ['background-color: #ffcccc'] * len(row)
+                    return ['background-color: rgba(255, 75, 75, 0.1); color: #ff4b4b; font-weight: bold;'] * len(row)
                 return [''] * len(row)
             
             display_cols = ["Predicted_Threat", "Confidence"] + [c for c in df.columns if c not in ("Predicted_Threat", "Confidence")]
